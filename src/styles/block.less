@@ -1,0 +1,40 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 12px;
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+
+section {
+	margin: 20px;
+}
+
+@gray: #CCCCCC;
+@blue: #4D8FFD;
+@red: #D9534F;
+
+.blockGenerator(@color:@gray) {
+	border-left: 4px solid @color;
+	background-color: fade(@color, 10%);
+	padding: 12px 14px 10px;
+	margin-bottom: 30px;
+	word-break: break-all;
+	word-wrap: break-word;
+
+	h3 {
+		margin-bottom: 10px;
+	}
+
+}
+
+.block {
+	.blockGenerator;
+
+	&.block-blue {
+		.blockGenerator(@blue);
+	}
+
+}
