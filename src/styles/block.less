@@ -3,9 +3,13 @@
 	padding: 0;
 }
 
-body {
+html {
 	font-size: 12px;
-	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+
+body {
+	font-family: Monaco, Menlo, Consolas, "Microsoft Yahei", "Courier New", monospace;
+	background-color: @lightGray;
 }
 
 section {
@@ -13,25 +17,129 @@ section {
 }
 
 @gray: #CCCCCC;
+@lightGray: #f5f7f9;
+@deepGray: #9AA0AA;
 @blue: #4D8FFD;
+@deepBlue: #4C8CF4;
 @red: #D9534F;
+@white: #FFF;
+@black: #393d44;
+@fontBlack: #666666;
+@green: #50af51;
+
+h1,
+h2,
+h3,
+h4 {
+	color: @black;
+	font-weight: 700;
+	line-height: 1;
+	padding: 10px 0;
+}
+
+h1 {
+	font-size: 1.6rem;
+}
+
+h2 {
+	font-size: 1.4rem;
+}
+
+h3 {
+	font-size: 1.2rem;
+}
+
+h4 {
+	font-size: 1.1rem;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	color: @fontBlack;
+	text-decoration: none;
+}
+
+#header {
+	background-color: @deepBlue;
+	min-height: 100px;
+}
+
+#footer {
+	color: @deepGray;
+	min-height: 60px;
+	max-width: 1070px;
+	margin: 0 auto;
+}
+
+.clear {
+	&:after {
+		clear: both;
+	}
+
+	&:after,
+	&:before {
+		display: table;
+		content: " ";
+	}
+
+}
+
+.container {
+	width: auto;
+	max-width: 1070px;
+	margin: 0 auto;
+	background-color: @white;
+}
+
+.main {
+	margin-top: -26px;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+	padding: 0 30px 20px 30px;
+
+	h4 {
+		color: @deepGray;
+	}
+
+	li {
+		padding: 2px 0;
+	}
+
+	.widget {
+		margin: 0 0 20px 0;
+	}
+
+}
+
+.content {
+	min-height: 500px;
+	border-left: 1px solid #eee;
+}
+
+.inner {
+	margin-top: 26px;
+}
 
 .blockGenerator(@color:@gray) {
 	border-left: 4px solid @color;
-	background-color: fade(@color, 10%);
+	background-color: fade(@color, 6%);
+}
+
+.block {
+	.blockGenerator;
 	padding: 12px 14px 10px;
 	margin-bottom: 30px;
 	word-break: break-all;
 	word-wrap: break-word;
 
-	h3 {
+	h4 {
 		margin-bottom: 10px;
 	}
-
-}
-
-.block {
-	.blockGenerator;
 
 	&.block-blue {
 		.blockGenerator(@blue);
@@ -39,6 +147,10 @@ section {
 
 	&.block-red {
 		.blockGenerator(@red);
+	}
+
+	&.block-green {
+		.blockGenerator(@green);
 	}
 
 }
