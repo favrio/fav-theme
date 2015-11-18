@@ -64,7 +64,36 @@ a {
 
 #header {
 	background-color: @deepBlue;
-	min-height: 100px;
+	padding: 15px 0 40px 0;
+
+	.inner {
+		max-width: 1070px;
+		margin: 0 auto;
+	}
+
+	.navs {
+		float: right;
+		margin-top: 10px;
+		display: inline-block;
+
+		li {
+			display: inline-block;
+		}
+
+		a {
+			color: #ABC0F5;
+			font-size: 1.2rem;
+			padding: 5px 10px;
+		}
+
+		.curr,
+		a:hover {
+			color: @white;
+			border-bottom: 2px solid @white;
+		}
+
+	}
+
 }
 
 #footer {
@@ -72,6 +101,15 @@ a {
 	min-height: 60px;
 	max-width: 1070px;
 	margin: 0 auto;
+}
+
+#logo {
+	display: inline-block;
+	text-indent: -99999px;
+	background: url(../../img/logo.png) no-repeat 50% 50%;
+	background-size: 85%;
+	width: 100px;
+	height: 40px;
 }
 
 .clear {
